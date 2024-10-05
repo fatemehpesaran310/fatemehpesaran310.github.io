@@ -172,7 +172,47 @@
           <p>The Text2Chart31 dataset <i>D</i> consists of 11,128 data points, each of which contains a tuple of <code>(x, c, d, r, y)</code>: a textual plot description (<i>x</i>), its corresponding code (<i>c</i>), and the resulting plots (<i>y</i>).</p>
           <p>For 8,166 data points, we additionally include a raw data table (<i>d</i>) and intermediate reasoning steps (<i>r</i>) to generate descriptions.</p>
           <img src="../../assets/blog/text2chart31/table1.png" alt="Table 1 comparing key characteristics of the Text2Chart31 dataset">
-        </div>        
+        </div>  
+        
+        <div class="content">
+          <h2 class="title is-3">Task Definition</h2>
+          <p>Our benchmark is designed to evaluate three tasks:</p>
+          <ol>
+            <li><i>Description-to-Chart:</i> Given a plot description <code>x</code>, an algorithm generates its corresponding code <code>c</code> that creates a chart using the Matplotlib library<sup><a href="#footnote1">1</a></sup> 
+            <cite><a href="#Hunter2007">Hunter, 2007</a></cite>. 
+            </li>
+            <li><i>Raw Data-to-Chart:</i> When provided with only a raw data table <code>d</code>, the algorithm generates intermediate reasoning steps <code>r</code> that analyze the raw data and then generates a description <code>d</code> for the most suitable plot type based on the characteristics of the data.</li>
+            <li><i>Code-to-Description:</i> Given the code <code>c</code> for a plot, the model generates a detailed description <code>x</code> of the plot.</li>
+          </ol>      
+        </div> 
+          
+        <div class="content">
+          <h2 class="title is-3">Method</h2>
+          <p>Our proposed algorithm is as bellow:</p>
+          <img src="../../assets/blog/text2chart31/algorithm.png">
+          
+        </div> 
+        
+        <div class="content">
+          <h2 class="title is-3">experiments</h2>
+          <p>Our results demonstrate that our method outperforms state-of-the-art (SOTA) methods.</p>
+          <!-- Full-size image on top -->
+          <div style="text-align: center;">
+            <img src="../../assets/blog/text2chart31/experiment1.png" alt="Experiment 1 Results" style="width: 100%; max-width: 800px;">
+          </div>
+
+          <!-- Two images side by side below the first one -->
+          <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <div style="flex: 1; padding-right: 10px;">
+              <img src="../../assets/blog/text2chart31/experiment2.png" alt="Experiment 2 Results" style="width: 100%; max-width: 400px;">
+            </div>
+            <div style="flex: 1; padding-left: 10px;">
+              <img src="../../assets/blog/text2chart31/experiment3.png" alt="Experiment 3 Results" style="width: 100%; max-width: 400px;">
+            </div>
+          </div>
+
+          
+        </div> 
           <!-- <div class="content">
             <h2 class="title is-3">Results</h2>
             <p>
