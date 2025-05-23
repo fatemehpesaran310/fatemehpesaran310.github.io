@@ -1,0 +1,221 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Text2Chart31: Instruction Tuning for Chart Generation with Automatic Feedback">
+    <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LPOI: Listwise Preference Optimization for Vision Language Models </b></title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+  
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+  
+      gtag('js', new Date());
+  
+      gtag('config', 'G-PYVRSFMDRL');
+    </script> -->
+  
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+  
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+    <!-- <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css"> -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="icon" href="../../static/images/favicon.svg">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="../../static/js/fontawesome.all.min.js"></script>
+    <script src="../../static/js/bulma-carousel.min.js"></script>
+    <script src="../../static/js/bulma-slider.min.js"></script>
+    <script src="../../static/js/index.js"></script>
+  </head>
+  <body>
+  
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LPOI: Listwise Preference Optimization for Vision Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://fatemehpesaran310.github.io/">Fatemeh Pesaran zadeh</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Yoojin Oh</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://vision.snu.ac.kr/gunhee/">Gunhee Kim</a><sup>1</sup>,
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Seoul National University,</span>
+            </div>
+            <div class="is-size-5 has-text-centered"><strong>(ACL 2025 Main)</strong></p>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!-- Poster Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Poster</span>
+                    </a>
+                </span>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="../../static/videos/teaser.mp4"
+                  type="video/mp4">
+        </video> -->
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">LPOI: </span> Listwise Preference Optimization for Vision Language Models.
+        </h2>
+  
+      </div>
+      <img src="../../assets/blog/lpoi/title.png">
+    </div>
+    
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-centered">
+            Aligning large VLMs with human preferences is a challenging task, as methods like RLHF           and DPO often overfit to textual information or           exacerbate hallucinations. Although augment         ing negative image samples partially addresses          these pitfalls, no prior work has employed list         wise preference optimization for VLMs, due to          the complexity and cost of constructing listwise image samples. In this work, we propose LPOI, the first object-aware listwise preference optimization developed for reducing hallucinations in VLMs. LPOI identifies and masks a critical object in the image, and then interpolates the masked region between the positive and negative images to form a sequence of incrementally more complete images. The model is trained to rank these images in ascending order of object visibility, effectively reducing hallucinations while retaining visual fidelity. LPOI requires no extra annotations beyond standard pairwise preference data, as it automatically constructs the ranked lists through object masking and interpolation. Comprehensive experiments on MMHalBench, AMBER, and Object HalBench confirm that LPOI outperforms existing preference optimization methods in reducing hallucinations and enhancing VLM performance. 
+            image samples. In this work, we propose LPOI,
+            the first object-aware listwise preference opti-
+            mization developed for reducing hallucinations
+            in VLMs. LPOI identifies and masks a critical
+            object in the image, and then interpolates the
+            masked region between the positive and nega-
+            tive images to form a sequence of incrementally
+            more complete images. The model is trained to
+            rank these images in ascending order of object
+            visibility, effectively reducing hallucinations
+            while retaining visual fidelity. LPOI requires
+            no extra annotations beyond standard pairwise
+            preference data, as it automatically constructs
+            the ranked lists through object masking and
+            interpolation. Comprehensive experiments on
+            MMHalBench, AMBER, and Object HalBench
+            confirm that LPOI outperforms existing prefer-
+            ence optimization methods in reducing halluci-
+            nations and enhancing VLM performance. 
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+    </div>
+  
+  
+    <div class="container is-max-desktop">
+  
+  
+        <!-- Visual Effects. -->
+        <div class="content">
+          <h2 class="title is-3">Method</h2>
+          <p>We propose a novel method for reducing hallucinations in Vision-Language Models (VLMs) by leveraging listwise preference optimization. Our approach identifies and masks a critical object in an image, then interpolates the masked region between a positive and negative image to form a sequence of incrementally more complete images. The model is trained to rank these images in ascending order of object visibility, effectively reducing hallucinations while retaining visual fidelity.</p>
+          <img src="../../assets/blog/lpoi/algorithm.png" alt=" Algorithm">
+        </div>  
+          
+        <div class="content">
+          <h2 class="title is-3">Experiments</h2>
+          <p>Our results demonstrate that our method outperforms state-of-the-art (SOTA) models.</p>
+          <!-- Full-size image on top -->
+          <div style="text-align: center;">
+            <img src="../../assets/blog/lpoi/experiment1.png" alt="Experiment 1 Results" style="width: 100%; max-width: 800px;">
+          </div>
+
+          
+        </div> 
+          <!-- <div class="content">
+            <h2 class="title is-3">Results</h2>
+            <p>
+              We evaluate compression methods in ResNet-34, MobileNetV2-(1.0/1.4) on ImageNet, and DDPM on CIFAR10.
+              Results show that <span class="dnerf">LayerMerge</span> outperforms current methods for reducing network depth in tasks including image classification and generation.
+            </p>
+            <img src="../../assets/blog/240711/long_pareto.png">
+          </div> -->
+        <!--/ Visual Effects. -->
+  
+    </div>
+  </section>
+  
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{pesaranzadeh2025lpoi,
+          title = “LPOI: Listwise Preference Optimization for Vision Language Models”,
+          author = "Pesaran zadeh, Fatemeh  and Oh, Yoojin  and Kim, Gunhee",
+          booktitle = "Proceedings of the 2025 Conference on Association for Computational Linguistics",
+          year = "2025”,
+      }
+  </code></pre>
+      Template of this post is based on <a href="https://nerfies.github.io/">Nerfies</a> website.
+    </div>
+  </section>
+  
+  
