@@ -153,15 +153,16 @@ li {
 /* top navigation */
 .site-nav {
   text-align: center;
-  padding: 18px 0 4px 0;
+  padding: 20px 0 6px 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.5px;
 }
 
 .site-nav a {
   color: #367da0;
-  padding: 4px 10px;
+  font-weight: 600;
+  padding: 4px 12px;
   text-decoration: none;
 }
 
@@ -177,6 +178,7 @@ li {
 
 .site-nav .nav-sep {
   color: #c7c7c7;
+  font-weight: 400;
 }
 
 /* carousel */
