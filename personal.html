@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Personal — Fatemeh Pesaran zadeh</title>
+
+  <meta name="author" content="Fatemeh Pesaran zadeh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal corner of Fatemeh Pesaran zadeh's website — travel, culture, nature.">
+  <meta name="keywords" content="Fatemeh Pesaran zadeh, personal, travel">
+
+  <script src="https://kit.fontawesome.com/da7276e40e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+</head>
+
+<body>
+  <table
+    style="width:100%;max-width:760px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <nav class="site-nav">
+            <a href="index.html">Research</a>
+            <span class="nav-sep">|</span>
+            <a href="personal.html" class="active">Personal</a>
+          </nav>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:100%;vertical-align:middle">
+                  <p style="text-align:left">
+                    <name>Personal Fatima</name>
+                  </p>
+                  <p>
+                    Conferences are a wonderful excuse for me to travel. I love both culture and nature — and the contrast between them.
+                    One day I am watching an opera at the Vienna Opera House, and the next I am hunting piranhas in the middle of the Amazon rainforest.
+                    Whenever I land somewhere new, I take the chance to explore the amazing places of that country and bring a few photos back.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr color="#c7c7c7" size="0.7" style="width:96%">
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>Gallery</heading>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Carousel -->
+          <div class="carousel" id="gallery">
+            <div class="carousel-frame">
+              <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+              <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+
+              <!-- Slides. To add more, copy any <div class="carousel-slide"> block
+                   and update src + data-caption. The dots/arrows auto-adjust. -->
+
+              <div class="carousel-slide active" data-caption="Amazon rainforest — into the jungle">
+                <img src="assets/personal/amazon1.jpeg" alt="Amazon rainforest">
+              </div>
+              <div class="carousel-slide" data-caption="Amazon rainforest">
+                <img src="assets/personal/amazon2.jpeg" alt="Amazon rainforest">
+              </div>
+              <div class="carousel-slide" data-caption="Amazon rainforest — piranha fishing">
+                <img src="assets/personal/amazon3.jpeg" alt="Amazon rainforest">
+              </div>
+              <div class="carousel-slide" data-caption="Vienna, Austria — a night at the Opera House">
+                <img src="assets/personal/opera.jpeg" alt="Vienna Opera House">
+              </div>
+              <div class="carousel-slide" data-caption="Vienna, Austria">
+                <img src="assets/personal/vienna.jpeg" alt="Vienna">
+              </div>
+              <div class="carousel-slide" data-caption="Vienna, Austria">
+                <img src="assets/personal/vienna2.jpeg" alt="Vienna">
+              </div>
+              <div class="carousel-slide" data-caption="Japan">
+                <img src="assets/personal/japan1.jpeg" alt="Japan">
+              </div>
+              <div class="carousel-slide" data-caption="Japan">
+                <img src="assets/personal/japan2.jpeg" alt="Japan">
+              </div>
+              <div class="carousel-slide" data-caption="Singapore">
+                <img src="assets/personal/singapore.jpeg" alt="Singapore">
+              </div>
+            </div>
+            <div class="carousel-caption" id="gallery-caption">Amazon rainforest — into the jungle</div>
+            <div class="carousel-dots" id="gallery-dots"></div>
+          </div>
+
+          <br><br>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:0px">
+                  <br>
+                  <p style="text-align:right;font-size:small;">
+                    Template based on <a href="https://jonbarron.info/">Jon Barron's website</a>.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    (function () {
+      const carousel = document.getElementById('gallery');
+      if (!carousel) return;
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const captionEl = document.getElementById('gallery-caption');
+      const dotsEl = document.getElementById('gallery-dots');
+      let index = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => show(i));
+        dotsEl.appendChild(dot);
+      });
+
+      function show(i) {
+        slides[index].classList.remove('active');
+        dotsEl.children[index].classList.remove('active');
+        index = (i + slides.length) % slides.length;
+        slides[index].classList.add('active');
+        dotsEl.children[index].classList.add('active');
+        captionEl.textContent = slides[index].getAttribute('data-caption') || '';
+      }
+
+      carousel.querySelector('.prev').addEventListener('click', () => show(index - 1));
+      carousel.querySelector('.next').addEventListener('click', () => show(index + 1));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') show(index - 1);
+        if (e.key === 'ArrowRight') show(index + 1);
+      });
+    })();
+  </script>
+</body>
+
+</html>
