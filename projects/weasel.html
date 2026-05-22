@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Weasel: Out-of-Domain Generalization for Web Agents via Importance-Diversity Data Selection">
+  <meta name="keywords" content="Weasel, web agents, data selection, out-of-domain generalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weasel: Out-of-Domain Generalization for Web Agents via Importance-Diversity Data Selection</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
+  <link rel="icon" href="../../assets/favicon/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../static/js/fontawesome.all.min.js"></script>
+  <script src="../../static/js/bulma-carousel.min.js"></script>
+  <script src="../../static/js/bulma-slider.min.js"></script>
+  <script src="../../static/js/index.js"></script>
+
+  <style>
+    .weasel-name {
+      color: #2563eb;
+      font-variant: small-caps;
+    }
+    .weasel-figure {
+      width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+    .weasel-result-table td,
+    .weasel-result-table th {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .weasel-result-table td:first-child,
+    .weasel-result-table th:first-child {
+      text-align: left;
+    }
+    .weasel-highlight {
+      background: #eef4ff;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="weasel-name">Weasel</span>: Out-of-Domain Generalization for Web Agents via Importance-Diversity Data Selection
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fatemehpesaran310.github.io/">Fatemeh Pesaran zadeh</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://seyeon-c.github.io/">Seyeon Choi</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://xinghanlu.com/">Xing Han L&ugrave;</a><sup>2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://sivareddy.in/">Siva Reddy</a><sup>2,3,4</sup>,</span>
+            <span class="author-block">
+              <a href="https://vision.snu.ac.kr/gunhee/">Gunhee Kim</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Seoul National University,</span>
+            <span class="author-block"><sup>2</sup>McGill University,</span>
+            <span class="author-block"><sup>3</sup>Mila - Quebec AI Institute,</span>
+            <span class="author-block"><sup>4</sup>Canada CIFAR AI Chair</span>
+            <br>
+            <span class="author-block"><strong>ICML 2026</strong></span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution</small></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.20291"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/fatemehpesaran310/weasel"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="weasel-name">Weasel</span> selects a compact, diverse set of offline web-agent demonstrations for better transfer to unseen websites.
+      </h2>
+      <img class="weasel-figure" src="../../assets/blog/weasel/figure1.png" alt="WEASEL overview showing in-domain, out-of-domain, and test-domain settings">
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Web agents can follow natural language goals through multi-step browser interactions, but agents trained offline on one set of websites often struggle to generalize to unseen domains. Offline training is also costly because trajectories contain long accessibility-tree states, redundant steps, and noisy demonstrations.
+          </p>
+          <p>
+            <span class="weasel-name">Weasel</span> addresses these issues with trajectory-step selection. It scores each step for goal relevance and selects a fixed-budget subset that balances importance with diversity across states, websites, and interaction patterns. The method also uses target-centered AXTree pruning and self-reasoning synthesis for reasoning-native models.
+          </p>
+          <p>
+            Across AgentTrek and NNetNav training datasets, and evaluations on WebArena, WorkArena, and MiniWob, <span class="weasel-name">Weasel</span> improves out-of-domain performance while producing roughly 9.7&ndash;12.5&times; training speed-ups over standard fine-tuning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="content">
+      <h2 class="title is-3">Method</h2>
+      <p>
+        <span class="weasel-name">Weasel</span> removes noisy and less useful trajectory steps, then greedily selects a subset that is both important for the task goal and diverse enough to cover different states and actions.
+      </p>
+      <img class="weasel-figure" src="../../assets/blog/weasel/weasel_main.png" alt="WEASEL trajectory selection method">
+    </div>
+
+    <div class="content">
+      <h2 class="title is-3">Target-Centered AXTree Pruning</h2>
+      <p>
+        Long accessibility-tree states make offline web-agent training expensive. <span class="weasel-name">Weasel</span> keeps a local window around the ground-truth action target, preserving the most relevant context while reducing the token budget.
+      </p>
+      <div class="columns is-vcentered">
+        <div class="column">
+          <img class="weasel-figure" src="../../assets/blog/weasel/pruning.png" alt="Target-centered AXTree pruning">
+        </div>
+        <div class="column">
+          <img class="weasel-figure" src="../../assets/blog/weasel/token-distribution.png" alt="Token count distribution before and after pruning">
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2 class="title is-3">Results</h2>
+      <p>
+        On WebArena-Lite with Qwen3-8B, out-of-domain AgentTrek training improves substantially when the training subset is selected with <span class="weasel-name">Weasel</span>.
+      </p>
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth weasel-result-table">
+          <thead>
+            <tr>
+              <th>Training setting</th>
+              <th>WebArena-Lite SR</th>
+              <th>Domain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WebArena training</td>
+              <td>20.0</td>
+              <td>In-domain</td>
+            </tr>
+            <tr>
+              <td>No training</td>
+              <td>16.4</td>
+              <td>Out-of-domain</td>
+            </tr>
+            <tr>
+              <td>AgentTrek SFT</td>
+              <td>17.7</td>
+              <td>Out-of-domain</td>
+            </tr>
+            <tr class="weasel-highlight">
+              <td>AgentTrek + Weasel</td>
+              <td>21.2</td>
+              <td>Out-of-domain</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <img class="weasel-figure" src="../../assets/blog/weasel/webarena_lite_comparison.png" alt="WebArena-Lite comparison chart">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{pesaranzadeh2026weasel,
+  title     = {{WEASEL}: Out-of-Domain Generalization for Web Agents via Importance-Diversity Data Selection},
+  author    = {Pesaran zadeh, Fatemeh and Choi, Seyeon and L\`u, Xing Han and Reddy, Siva and Kim, Gunhee},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  year      = {2026}
+}</code></pre>
+    Template of this post is based on <a href="https://nerfies.github.io/">Nerfies</a> website.
+  </div>
+</section>
+
+</body>
+</html>
